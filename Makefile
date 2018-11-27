@@ -12,7 +12,7 @@ BUILDDIR      = _build
 release: html
 	git add .
 	git commit -m "latest updates"
-	git push master origin
+	git push origin master
 
 
 help:
