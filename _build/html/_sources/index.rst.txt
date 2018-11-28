@@ -3,14 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to My Data Visualization Project's documentation!
+Welcome to Beka's and Salamu's Data Visualization Project's documentation!
 =========================================================
 
-This is my project.
+This is our project.
 
 First Heading
 -----------------
-.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/projectfinal.ipynb
+.. figure:: https://cdn.vox-cdn.com/thumbor/rpnUZf58x66rdd0oyXHgLcTb2uI=/0x0:2040x1360/1200x800/filters:focal(860x538:1186x864)/cdn.vox-cdn.com/uploads/chorus_image/image/59142891/acastro_171108_1777_0009_v2.0.jpg
 My First chapter.
 
 Munging Data with Python
