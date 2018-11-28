@@ -10,7 +10,7 @@ This is my project.
 
 First Heading
 -----------------
-
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/projectfinal.ipynb
 My First chapter.
 
 
