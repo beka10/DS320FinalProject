@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Beka's and Salamu's Data Visualization Project's documentation!
+Welcome to our Data Visualization Project's documentation!
 =========================================================
+Beka Beriashvili and Salamu Ali Brahim
 
 This is our project.
 
@@ -13,17 +14,17 @@ Gun Violence
 .. figure:: https://cdn.vox-cdn.com/thumbor/rpnUZf58x66rdd0oyXHgLcTb2uI=/0x0:2040x1360/1200x800/filters:focal(860x538:1186x864)/cdn.vox-cdn.com/uploads/chorus_image/image/59142891/acastro_171108_1777_0009_v2.0.jpg
 
 
-Munging Data with Python
+Parsing Data with Python
 -----------------
 
 
 .. code-block:: python
 
 	def main():
-    	# to import libraries
-    	import ssl
-    	from bs4 import BeautifulSoup as bto
-    	import csv
+    	   # to import libraries
+    	   import ssl
+    	   from bs4 import BeautifulSoup as bto
+    	   import csv
 
     	# to create default context
     	ctx = ssl.create_default_context()
