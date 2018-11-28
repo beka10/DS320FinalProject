@@ -21,6 +21,7 @@ Subheading One
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   projectfinal.ipynb
 
 
 
