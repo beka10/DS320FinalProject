@@ -92,12 +92,10 @@ Parsing Data with Python
     	   main() 
 
 The dataset after parsing. 
-.. image:: picture.png
-   :width: 200px
-   :height: 100px
-   :scale: 50 %
-   :alt: alternate text
-   :align: right
+
+
+
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/picture.png?raw=true
 
 
 Subheading One
