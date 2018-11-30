@@ -94,13 +94,13 @@ Parsing Data with Python
 The dataset after parsing and cleaning.
 
 
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/picture.png?raw=true
+
+
+
 You can download this data set from here.
 
 `http://knuth.luther.edu/~beribe01/gunviolence.csv <http://knuth.luther.edu/~beribe01/gunviolence.csv>`_ 
-
-
-
-.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/picture.png?raw=true
 
 
 Subheading One
