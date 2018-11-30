@@ -36,6 +36,6 @@ $(window).resize(function(){
         $("li.nav-item-0 a").text("Top");
     }
     else {
-        $("li.nav-item-0 a").text("My Data Visualization Project  documentation");
+        $("li.nav-item-0 a").text("Data Visualization Project  documentation");
     }
 });

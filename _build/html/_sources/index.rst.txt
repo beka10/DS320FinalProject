@@ -91,6 +91,14 @@ Parsing Data with Python
 	if __name__=='__main__':
     	   main() 
 
+The dataset after parsing. 
+.. image:: picture
+   :width: 200px
+   :height: 100px
+   :scale: 50 %
+   :alt: alternate text
+   :align: right
+
 
 Subheading One
 +++++++++++++++++
