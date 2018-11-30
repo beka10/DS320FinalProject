@@ -91,7 +91,12 @@ Parsing Data with Python
 	if __name__=='__main__':
     	   main() 
 
-The dataset after parsing. 
+The dataset after parsing and cleaning.
+
+
+You can download this data set from here.
+
+`http://knuth.luther.edu/~beribe01/gunviolence.csv <http://knuth.luther.edu/~beribe01/gunviolence.csv>`_ 
 
 
 
