@@ -92,7 +92,7 @@ Parsing Data with Python
     	   main() 
 
 The dataset after parsing. 
-.. image:: picture
+.. image:: picture.png
    :width: 200px
    :height: 100px
    :scale: 50 %
