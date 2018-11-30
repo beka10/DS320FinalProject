@@ -21,6 +21,7 @@ We found our dataset on https://www.gunviolencearchive.org/
 
 
 In order to run this code below and make csv file you need to download this html materials. We downloaded it manually because it was blocked and we could not get the access. 
+
 *  `Gun violence zip files <http://knuth.luther.edu/~beribe01/gunviolence.zip>`_ 
 
 
@@ -97,7 +98,9 @@ In order to run this code below and make csv file you need to download this html
       
 	if __name__=='__main__':
     	   main() 
-`Click here and download the code above in py format  <http://knuth.luther.edu/~beribe01/FinalProject.py>`_ 
+
+`Click here and download the python file of the code above  <http://knuth.luther.edu/~beribe01/FinalProject.py>`_ 
+
 The dataset after parsing and cleaning.
 
 
