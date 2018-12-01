@@ -14,6 +14,15 @@ Gun Violence
 .. figure:: https://cdn.vox-cdn.com/thumbor/rpnUZf58x66rdd0oyXHgLcTb2uI=/0x0:2040x1360/1200x800/filters:focal(860x538:1186x864)/cdn.vox-cdn.com/uploads/chorus_image/image/59142891/acastro_171108_1777_0009_v2.0.jpg
 
 
+Introduction
+-----------------
+
+Welcome to data visualization of gun violence in the United States using data from multiple sources. Gun violence results in ten thousands of deaths and injuries annually in the United States. last year,  there were more than 300 mass shootings and thousands of people killed and injured . Our purpose is to find the states with the most and least gun violence, and what are the reasons and factors that increase gun violence in the United States? To answer this question we gathered data from two sources, data from gunviolencearchive.org and gun violence in the US data from Kaggle.com. To get the dataset from gunviolencearchive.org we had to parse the website to get the data for the 50 states. It  has the following variables for all fifty states: State, Total Number of Incidents, Number of Deaths, Number of Injuries, Number of Children , Number of Teens, Mass Shooting, Officer Involved  Incident, Home Invasion, Defensive Use and Unintentional Shooting. In addition, we cleaned the Kaggle.com dataset and removed the columns that were missing many values to end up with 239677 rows of data for the following variables: incident id, date, state, city , number of people killed, number of people injured, congressional district, latitude, longitude, number of guns involved. Both of the datasets will be used in our visualization in order to investigate the results and find answers to our questions. 
+This website will outline all the details of this project that includes the data acquisition, data visualization, background information and a narrative that will provide answers to answers our initial questions.  
+
+
+
+
 Parsing Data with Python
 -----------------
 We found our dataset on https://www.gunviolencearchive.org/
