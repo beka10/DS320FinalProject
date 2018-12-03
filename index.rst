@@ -122,7 +122,18 @@ You can download this data set from here.
 `http://knuth.luther.edu/~beribe01/gunviolence.csv <http://knuth.luther.edu/~beribe01/gunviolence.csv>`_ 
 
 
-Subheading One
+
+Data Visualization
+------------------
+
+We have two graphs, first is top states by deaths due to violence and top states by injuries due to violence. California is on the first position in deaths but Illinois is on the first position in injuries
+
+
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_19_0.png?raw=true
+
+
+
+
 +++++++++++++++++
 
 .. toctree::
