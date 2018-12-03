@@ -126,22 +126,41 @@ You can download this data set from here.
 Data Visualization
 ------------------
 
+Graph 1
+++++++++++++++++++
 We have two graphs, first is top states by deaths due to violence and top states by injuries due to violence. California is on the first position in deaths but Illinois is on the first position in injuries.
 
 .. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_19_0.png?raw=true
 
-
+Graph 2
+++++++++++++++++++
 In this plot, we show the lowest 15 states with casualties
 those are the states that have fewer deaths and injuries frim gun violence. The lowest states are Wyoming, Vermont an Hawaii.
 
 .. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_21_1.png?raw=true
 
 
-
+Graph 3
+++++++++++++++++++
 The following plots show the correlations between the columns, represented in scatter plots,from which we can see the correlation between each two columns in our dataset There are interesting correlations in our data starting by the correlations with total number of incidents, which seem to have positive correlation with almost all the other variables particularly number of deaths, injuries, mass shooting, and unintentional shooting. This show that in most of our data there is a relationship between the number of incidents that occurred in each state with the other variables being an important factor in those incidents. Then, the number of injuries and deaths also have positive linear correlations with a mass shooting, home invasion, and unintentional shooting. Which also makes sense when we talk about gun violence all those factors are related. Mass shooting is also interesting variable as it has positive linear relationship with total number of incidents, injuries and death this happen because the increase in mass shooting will increase those variables there are other noticeable linear relationships such as the relationship between home invasions and unintentional shooting, which means that one of the reasons of unintentional shooting is the invasion of houses where people tend to react by shooting the people who try enter their houses illegally. Also, there is I testing the positive linear relationship between officers involved in incidents and mass shooting, which means that the more involvement of the police there tend to be a more mass shooting. In general, we tried to show that these dataset variables have a lot of positive correlations that can explain some of the main reasons for gun violence in the united states.
 
 
 .. figure:: https://raw.githubusercontent.com/beka10/DS320FinalProject/master/_build/html/_images/projectfinal_21_0.png
+
+Graph 4
++++++++++++++
+Here we show the map of the United States with the highest places (cities) with gun violence we see that it is mostly spread in the east, west coast and the south. With red points almost everywhere except the center areas of the country.
+
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_41_1.png?raw=true
+
+
+Graph 5
++++++++++++++
+
+This map shows the number of incidents of gun violence in the state of Iowa. As we can see from the map there is more concentration of red dots on the bigger cities with more population like Des Moines, Iowa City, and Cedar Rapids The same happens when we look at Illinois, there is a lot of red dots around Chicago comparing to the rest of the state. This also confirmed the trend that we have been seeing the big cities in the states with the most incidents of gun violence.
+
+
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_43_0.png?raw=true
 
 
 +++++++++++++++++
