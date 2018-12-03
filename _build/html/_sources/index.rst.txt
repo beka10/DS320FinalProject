@@ -123,7 +123,7 @@ You can download this data set from here.
 
 
 
-Data Visualization
+Data visualization 
 ------------------
 
 Graph 1
@@ -161,6 +161,40 @@ This map shows the number of incidents of gun violence in the state of Iowa. As 
 
 
 .. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_43_0.png?raw=true
+
+
+Graph 6
++++++++++++++++
+
+This plot shows home invasion per state. We can see that some trends continue we still have Florida, and Texas in the top 4 states with home invasion, which indicate that home invasions might be an important reason of incidents, deaths, and injuries from gun violence in the United States. Also, We can see that Georgia is in the top 4 of home invasions but it was not in the highest states with the highest incidents and deaths.
+
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_23_0.png?raw=true
+
+
+Graph 7
+++++++++++++++
+
+In this plot, we look at the top 10 states of the overall violence. Overall violence is the sum of the number of deaths, injuries, incidents mass shooting, officers involved and unintentional shooting We can see that California, Texas, Florida and Illinois are still the top four states in overall violence.
+
+
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_24_1.png?raw=true
+
+
+Graph 8
+++++++++++++++
+
+This plot shows the number of teenagers involved in gun violence per state the teenagers here are under the age of 17 As we can see from the plot below Illinois has the highest number of teenagers involved in gun violence followed by Florida, California and Texas those are the same 4 highest states for incidents and deaths from gun violence this prove that Today’s children and teenagers are more prone to violence.
+
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_27_2.png?raw=true
+
+
+
+Graph 9
++++++++++++++
+
+This plot shows the relationship between a mass shooting and total deaths As we can see from the plot mostly as the mass shootings increase the number of deaths will increase. According to the US Congressional Research Service mass shooting is four or more shot and/or killed in a single event (incident) this shows that mass shootings are incidents with more people being killed or injured.
+
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_31_0.png?raw=true
 
 
 +++++++++++++++++
