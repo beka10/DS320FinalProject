@@ -197,6 +197,34 @@ This plot shows the relationship between a mass shooting and total deaths As we 
 .. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_31_0.png?raw=true
 
 
+Graph 10
+++++++++++++++
+Now we move from states and look at the cities with the highest
+gun violence in the United States. We can see that Chicago, Baltimore 
+Washington DC is the highest cities in gun violence.
+it is interesting that there are only two cities from
+the top four states, which are Chicago and Houston.
+
+
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_40_1.png?raw=true
+
+
+Graph 11
++++++++++++++++
+Here we plot gun violence incidents per year in the past 4 years
+we can see that gun violence is increasing every year
+in the past 4 years to reach 61000 incidents in 2017.
+This year so far there were 13000 incidents, this counts only
+till March 31st, 2018.
+
+.. figure:: https://github.com/beka10/DS320FinalProject/blob/master/_build/html/_images/projectfinal_47_0.png?raw=true
+
+Python Notebook with more data visualization graphs
+----------------------
+In this part, you can download our Python Notebook where we have uploaded all the visualization graphs that we did for this project. You will see more than 20 interesting graphs and all of them can tell the story to the readers.
+
+
+
 +++++++++++++++++
 
 .. toctree::
