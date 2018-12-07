@@ -223,6 +223,10 @@ Python Notebook with more data visualization graphs
 ----------------------
 In this part, you can download our Python Notebook where we have uploaded all the visualization graphs that we did for this project. You will see more than 20 interesting graphs and all of them can provide a good analysis.
 
+*  `Click here to see our notebook file <https://github.com/beka10/DS320FinalProject/blob/master/_build/html/projectfinal.ipynb>`_
+
+
+
 
 
 
