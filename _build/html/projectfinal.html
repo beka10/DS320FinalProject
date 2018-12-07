@@ -1,0 +1,2811 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Now We are start working on the KAGGLE.COM dataset &#8212; Data Visualization Project  documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Data Visualization Project  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Now We are start working on the KAGGLE.COM dataset</a></li>
+<li><a class="reference internal" href="#Conclusion">Conclusion</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/projectfinal.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 9ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># to import libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># to read the file</span>
+
+<span class="c1"># gunv is the dataset which we parsed from gun violence archives. We included python file</span>
+<span class="c1"># with code that exracts and cleans data from gunviolence https://www.gunviolencearchive.org.</span>
+<span class="c1"># datas is the dataset which we downloaded from kaggle.com</span>
+<span class="n">gunv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;gunviolence.csv&#39;</span><span class="p">)</span>
+<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;violenceG.csv&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># this will give us the first five rows of the data which</span>
+<span class="c1"># we parsed from https://www.gunviolencearchive.org</span>
+<span class="n">gunv</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State</th>
+      <th>Total Number of Incidents</th>
+      <th>Number of Deaths</th>
+      <th>Number of Injuries</th>
+      <th>Number of Children</th>
+      <th>Number of Teens</th>
+      <th>Mass Shooting</th>
+      <th>Officer Involved Incident</th>
+      <th>Home Invasion</th>
+      <th>Defensive Use</th>
+      <th>Unintentional Shooting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alabama</td>
+      <td>6,118</td>
+      <td>2,137</td>
+      <td>3,498</td>
+      <td>110</td>
+      <td>303</td>
+      <td>41</td>
+      <td>190</td>
+      <td>245</td>
+      <td>262</td>
+      <td>217</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Alaska</td>
+      <td>1,514</td>
+      <td>300</td>
+      <td>365</td>
+      <td>20</td>
+      <td>36</td>
+      <td>1</td>
+      <td>42</td>
+      <td>78</td>
+      <td>66</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Arizona</td>
+      <td>2,618</td>
+      <td>1,263</td>
+      <td>1,260</td>
+      <td>46</td>
+      <td>135</td>
+      <td>18</td>
+      <td>340</td>
+      <td>127</td>
+      <td>154</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Arkansas</td>
+      <td>3,298</td>
+      <td>900</td>
+      <td>1,572</td>
+      <td>43</td>
+      <td>157</td>
+      <td>16</td>
+      <td>106</td>
+      <td>142</td>
+      <td>113</td>
+      <td>134</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>California</td>
+      <td>18,448</td>
+      <td>6,348</td>
+      <td>8,688</td>
+      <td>186</td>
+      <td>862</td>
+      <td>185</td>
+      <td>1,291</td>
+      <td>545</td>
+      <td>450</td>
+      <td>460</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#first we will start by looking at the description of the two datsets</span>
+<span class="c1">#by looking at different functions like describe, shape and size</span>
+<span class="c1">#to have an idea about the size and values of the two datasets</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">columns1</span><span class="o">=</span><span class="n">datas</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">columns</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[4]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>Index([&#39;State&#39;, &#39;Total Number of Incidents&#39;, &#39;Number of Deaths&#39;,
+       &#39;Number of Injuries&#39;, &#39;Number of Children &#39;, &#39;Number of Teens&#39;,
+       &#39;Mass Shooting&#39;, &#39;Officer Involved Incident&#39;, &#39;Home Invasion&#39;,
+       &#39;Defensive Use&#39;, &#39;Unintentional Shooting&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># data type of our dataset</span>
+<span class="n">gunv</span><span class="o">.</span><span class="n">get_dtype_counts</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[5]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>int64     5
+object    6
+dtype: int64
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#length of dataset created by us</span>
+<span class="n">len_datas</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span>
+<span class="n">len_gunv</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">gunv</span><span class="p">)</span>
+<span class="n">len_gunv</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[6]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>50
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># shape of the dataset, this shows numbers of rows and columns</span>
+<span class="n">gunv</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[7]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>(50, 11)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># size of the dataset</span>
+<span class="n">gunv</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[8]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>550
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># it gives the brief information about the dataset</span>
+<span class="n">gunv</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Number of Children</th>
+      <th>Mass Shooting</th>
+      <th>Home Invasion</th>
+      <th>Defensive Use</th>
+      <th>Unintentional Shooting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>50.000000</td>
+      <td>50.000000</td>
+      <td>50.000000</td>
+      <td>50.0000</td>
+      <td>50.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>64.000000</td>
+      <td>33.260000</td>
+      <td>240.460000</td>
+      <td>172.8000</td>
+      <td>183.980000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>66.936156</td>
+      <td>41.174001</td>
+      <td>206.437638</td>
+      <td>175.3044</td>
+      <td>146.687435</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>6.000000</td>
+      <td>9.0000</td>
+      <td>8.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>15.500000</td>
+      <td>4.000000</td>
+      <td>82.500000</td>
+      <td>47.5000</td>
+      <td>73.500000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>42.000000</td>
+      <td>16.500000</td>
+      <td>142.000000</td>
+      <td>120.0000</td>
+      <td>142.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>102.750000</td>
+      <td>48.500000</td>
+      <td>363.000000</td>
+      <td>255.0000</td>
+      <td>257.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>298.000000</td>
+      <td>185.000000</td>
+      <td>883.000000</td>
+      <td>862.0000</td>
+      <td>666.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># information about dataset</span>
+<span class="n">gunv</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 50 entries, 0 to 49
+Data columns (total 11 columns):
+State                        50 non-null object
+Total Number of Incidents    50 non-null object
+Number of Deaths             50 non-null object
+Number of Injuries           50 non-null object
+Number of Children           50 non-null int64
+Number of Teens              50 non-null object
+Mass Shooting                50 non-null int64
+Officer Involved Incident    50 non-null object
+Home Invasion                50 non-null int64
+Defensive Use                50 non-null int64
+Unintentional Shooting       50 non-null int64
+dtypes: int64(5), object(6)
+memory usage: 4.4+ KB
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># we replacing the space in the column names with underscore to make it easier to use</span>
+<span class="n">gunv</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># We convert the columns that are represented as object to float</span>
+<span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;total_number_of_incidents&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">total_number_of_incidents</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;number_of_deaths&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">number_of_deaths</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;number_of_injuries&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">number_of_injuries</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;number_of_teens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">number_of_teens</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;officer_involved_incident&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">officer_involved_incident</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># We double check the type of columns, we can see that they have been changed to float</span>
+<span class="n">gunv</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 50 entries, 0 to 49
+Data columns (total 11 columns):
+state                        50 non-null object
+total_number_of_incidents    50 non-null float64
+number_of_deaths             50 non-null float64
+number_of_injuries           50 non-null float64
+number_of_children           50 non-null int64
+number_of_teens              50 non-null float64
+mass_shooting                50 non-null int64
+officer_involved_incident    50 non-null float64
+home_invasion                50 non-null int64
+defensive_use                50 non-null int64
+unintentional_shooting       50 non-null int64
+dtypes: float64(5), int64(5), object(1)
+memory usage: 4.4+ KB
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+
+<span></span><span class="c1">#This plot shows the correlations between the all the colums, represented in colors</span>
+<span class="c1">#the brightest colors have the best correlations between the columns</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[14]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x101e6a278&gt;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_13_1.png" src="_images/projectfinal_13_1.png" />
+</div>
+</div>
+<p>The following plots show the correlations between the coloumns,
+represented in scatter plots,from which we can see the correlation
+between each two columns in our dataset There are intresting
+correlations in our datastarting by the correlatuions with total number
+of incidents, which seem to have positive correlation with almost all
+the other variables particularly number of deaths, injuries, mass
+shooting and unintentional shooting. This show that in most of our data
+there is relationship between the number of incidents that occurred in
+each state with the other variables being important factor of those
+incidents. Then, the number of injuries and deaths also have positive
+linear correlations with mass shooting, home invasion and uningentional
+shooting. Which also makes sense when we talk about gun violence all
+those factors are related. Mass shooting is also intresting variable as
+it has positive linear relationship with total number of incidents,
+inturies and death this happen because the increase in mass shooting
+will incease those variables there are other noticeable linear
+relationshps such as the rekationship between home invasions and
+unintentional shooting, which means that one of the reasons of
+unintentional shooting is the invasion of houses where people tend to
+react by shooting the people who try enter their houses ilegally. Also,
+there is i tresting positive linear relationship between officers
+involved in incidents and mass shooting, which means that the more
+involvement of the plice thre tend tobe more mass shooting. In general,
+we tried to show that this dataset variables have a lot of poaitive
+correlations that can explain some of the main reasons of gun violence
+in the united states.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_number_of_incidents&#39;</span><span class="p">,</span><span class="s1">&#39;number_of_deaths&#39;</span><span class="p">,</span><span class="s1">&#39;number_of_injuries&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;mass_shooting&#39;</span><span class="p">,</span><span class="s1">&#39;officer_involved_incident&#39;</span><span class="p">,</span><span class="s1">&#39;home_invasion&#39;</span><span class="p">,</span> <span class="s1">&#39;defensive_use&#39;</span><span class="p">,</span><span class="s1">&#39;unintentional_shooting&#39;</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">gunv</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">size</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_15_0.png" src="_images/projectfinal_15_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#this plot shows the total number of incidents per state, As we can see</span>
+<span class="c1">#the top states are Illinois, California, Florida and Texas.</span>
+<span class="n">df3</span><span class="o">=</span><span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;total_number_of_incidents&#39;</span><span class="p">:[</span><span class="s1">&#39;sum&#39;</span><span class="p">]})</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;winter&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_16_0.png" src="_images/projectfinal_16_0.png" />
+</div>
+</div>
+<p>This plot shows the total number of deaths per state, As we can see the
+top states are California, Florida,Texas and Illinois.The same states in
+the previous plot but not in the same order. this indicate that there is
+tren here where those states have more shootings and incidents</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+
+<span></span><span class="n">df3</span><span class="o">=</span><span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;number_of_deaths&#39;</span><span class="p">:[</span><span class="s1">&#39;sum&#39;</span><span class="p">]})</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;autumn&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_18_0.png" src="_images/projectfinal_18_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#this time we tried to plot two graphs, which are the top states by deaths</span>
+<span class="c1">#and top staes by injuries, to compare them. From the two plots we can see</span>
+<span class="c1">#that the same previous four states are showing again.</span>
+<span class="n">state_kill</span>   <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">)[</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">state_injury</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">)[</span><span class="s2">&quot;number_of_injuries&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;number_of_injuries&quot;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">,</span><span class="s2">&quot;state&quot;</span><span class="p">,</span>
+                 <span class="n">data</span><span class="o">=</span><span class="n">state_kill</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="s2">&quot;husl&quot;</span><span class="p">,</span>
+                 <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="o">*</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;STATE&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;KILLED&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;TOP STATES BY DEATHS DUE TO VIOLENCE&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">state_kill</span><span class="p">[</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">][:</span><span class="mi">15</span><span class="p">]):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">.</span><span class="mi">9</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span> <span class="o">.</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="s2">&quot;number_of_injuries&quot;</span><span class="p">,</span><span class="s2">&quot;state&quot;</span><span class="p">,</span>
+                 <span class="n">data</span><span class="o">=</span><span class="n">state_injury</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="s2">&quot;husl&quot;</span><span class="p">,</span>
+                <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="o">*</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;INJURED&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;TOP STATES BY INJURIES DUE TO VIOLENCE&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">state_injury</span><span class="p">[</span><span class="s2">&quot;number_of_injuries&quot;</span><span class="p">][:</span><span class="mi">15</span><span class="p">]):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">.</span><span class="mi">9</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span> <span class="o">.</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_19_0.png" src="_images/projectfinal_19_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#here we plot casualities per state</span>
+<span class="c1">#casualities is the sum of number of deaths and number of injuries</span>
+<span class="c1">#And  Again the top states are Illinois,California, Texas and Florida.</span>
+<span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;casualities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_injuries&quot;</span><span class="p">]</span>
+<span class="n">gunv</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;casualities&quot;</span> <span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">][:</span><span class="mi">15</span><span class="p">],</span><span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;casualities&quot;</span><span class="p">][:</span><span class="mi">15</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">][:</span><span class="mi">15</span><span class="p">],</span>
+            <span class="n">s</span><span class="o">=</span><span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_injuries&quot;</span><span class="p">][:</span><span class="mi">15</span><span class="p">]</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25000</span><span class="p">,</span><span class="mi">2500</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;STATES&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CASUALITIES&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;SIZES = INJURED ,COLOR = KILLED&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;********************************&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;CASUALITIES BY TOP 15 STATES&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+SIZES = INJURED ,COLOR = KILLED
+********************************
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_20_1.png" src="_images/projectfinal_20_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#in this plot we show the lowest 15 states with casualities</span>
+<span class="c1">#those are the states that have less deaths and injuries</span>
+<span class="c1">#frim gun violence. The lowest states are Wyoming, Vermont an Hawaii.</span>
+<span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;casualities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_injuries&quot;</span><span class="p">]</span>
+<span class="n">gunv</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;casualities&quot;</span> <span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">][:</span><span class="mi">15</span><span class="p">],</span><span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;casualities&quot;</span><span class="p">][:</span><span class="mi">15</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">][:</span><span class="mi">15</span><span class="p">],</span>
+            <span class="n">s</span><span class="o">=</span><span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_injuries&quot;</span><span class="p">][:</span><span class="mi">15</span><span class="p">]</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25000</span><span class="p">,</span><span class="mi">2500</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;STATES&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CASUALITIES&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;SIZES = INJURED ,COLOR = KILLED&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;********************************&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;CASUALITIES BY TOP 15 STATES&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+SIZES = INJURED ,COLOR = KILLED
+********************************
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_21_1.png" src="_images/projectfinal_21_1.png" />
+</div>
+</div>
+<p>This plot shows home invasion per state. We can see that some trends
+continue we still have Florida, Califorina and Texas in the top 4 sates
+with home invasion, which indicate that home invasions might be
+important reason of incidents, deaths and injuries from gun violence in
+the United States. Also, We can see that Georgia is in the top 4 of home
+invasions but it was not in the highest states with highest incidents
+and deaths</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+
+<span></span><span class="n">grouped</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">=</span><span class="n">grouped</span><span class="p">[</span><span class="s1">&#39;mass_shooting&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;sum&#39;</span><span class="p">),</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">plot3</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">g</span><span class="p">)</span>
+
+<span class="n">plot3</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+
+<span class="n">plot3</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;States&#39;</span><span class="p">,</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+<span class="n">plot3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Mass sShooting&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_23_0.png" src="_images/projectfinal_23_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#in this plot we look at the top 10 states of the overall violence</span>
+<span class="c1">#overall vilence is the sum of number of deaths, injuries, incidents</span>
+<span class="c1">#mass shooting, officers involved and unintentional shooting</span>
+<span class="c1">#We can see that California, Texas, Florida and Illinois are still</span>
+<span class="c1">#the top four states in overall violence.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;state&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;Total_Violence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_injuries&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;total_number_of_incidents&#39;</span><span class="p">]</span> <span class="o">+</span><span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;mass_shooting&#39;</span><span class="p">]</span><span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;officer_involved_incident&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;home_invasion&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;unintentional_shooting&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;state&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s1">&#39;Total_Violence&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">pub</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;cool&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">pub</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Total_Violence&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Total Violence&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Top 10 states by overall violence&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="n">pub</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&lt;Figure size 1296x864 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_24_1.png" src="_images/projectfinal_24_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#We do the same plot as above but with the lowest 10 states</span>
+<span class="c1">#we can see that the same states are appearing again</span>
+<span class="c1">#the states of Hawaii, Wyoming and Vermont are the lowest</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;state&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;Total_Violence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;number_of_injuries&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;total_number_of_incidents&#39;</span><span class="p">]</span> <span class="o">+</span><span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;mass_shooting&#39;</span><span class="p">]</span><span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;officer_involved_incident&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;home_invasion&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;unintentional_shooting&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;state&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s1">&#39;Total_Violence&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">pub</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;gist_earth&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">pub</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Total_Violence&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Total Violence&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Top 10 states by least overall violence&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="n">pub</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&lt;Figure size 1296x864 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_25_1.png" src="_images/projectfinal_25_1.png" />
+</div>
+</div>
+<p>This plot shows the number of teneegars involved in gun violence per
+state the teenagers here are under the age of 17 As we can see from the
+plot below Illinois has the highest number of teenagers involved in gun
+violence followed by Florida, California and Texasthose are the same 4
+highest states for incidents and deaths from gun violence this prove
+that Today’s children and teenagers are more prone to violence</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">children</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;state&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">gunv</span><span class="p">[</span><span class="s2">&quot;ChildrenViolence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;number_of_children&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">gunv</span><span class="p">[</span><span class="s1">&#39;number_of_teens&#39;</span><span class="p">]</span>
+<span class="n">data123</span> <span class="o">=</span> <span class="n">gunv</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;state&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s1">&#39;ChildrenViolence&#39;</span><span class="p">]</span>
+<span class="n">data123</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data123</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">data123</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[24]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10a023fd0&gt;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&lt;Figure size 1296x864 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_27_2.png" src="_images/projectfinal_27_2.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#this plot shows the relationship between defensive use and unintentional shooting</span>
+<span class="c1">#there is positive relationship so as the number as defensie use increase</span>
+<span class="c1">#unintentional shooting will increase. This indicate that defensive use is one of</span>
+<span class="c1">#the resons for unintentional shooting</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;unintentional_shooting&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;defensive_use&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">gunv</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_28_0.png" src="_images/projectfinal_28_0.png" />
+</div>
+</div>
+<div class="section" id="Now-We-are-start-working-on-the-KAGGLE.COM-dataset">
+<h1>Now We are start working on the KAGGLE.COM dataset<a class="headerlink" href="#Now-We-are-start-working-on-the-KAGGLE.COM-dataset" title="Permalink to this headline">¶</a></h1>
+<p>This plot shows the relationship between mass shooting and total deaths
+As we can see from the plot mostly as the mass shootings increase the
+number of deaths will increase. According to the US Congressional
+Research Service mass shooting is four or more shot and/or killed in a
+single event (incident) this shows that mass shootings are incidents
+with more people being killed or injured</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+
+<span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mass_shooting&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;number_of_deaths&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">gunv</span><span class="p">)</span>
+<span class="c1">#number_of_injuries</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_31_0.png" src="_images/projectfinal_31_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;violenceG.csv&quot;</span><span class="p">)</span>
+<span class="n">datas</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>incident_id</th>
+      <th>date</th>
+      <th>state</th>
+      <th>city_or_county</th>
+      <th>address</th>
+      <th>n_killed</th>
+      <th>n_injured</th>
+      <th>incident_url</th>
+      <th>source_url</th>
+      <th>incident_url_fields_missing</th>
+      <th>...</th>
+      <th>participant_age</th>
+      <th>participant_age_group</th>
+      <th>participant_gender</th>
+      <th>participant_name</th>
+      <th>participant_relationship</th>
+      <th>participant_status</th>
+      <th>participant_type</th>
+      <th>sources</th>
+      <th>state_house_district</th>
+      <th>state_senate_district</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>461105</td>
+      <td>2013-01-01</td>
+      <td>Pennsylvania</td>
+      <td>Mckeesport</td>
+      <td>1506 Versailles Avenue and Coursin Street</td>
+      <td>0</td>
+      <td>4</td>
+      <td>http://www.gunviolencearchive.org/incident/461105</td>
+      <td>http://www.post-gazette.com/local/south/2013/0...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::20</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Male||3::Male||4::Female</td>
+      <td>0::Julian Sims</td>
+      <td>NaN</td>
+      <td>0::Arrested||1::Injured||2::Injured||3::Injure...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://pittsburgh.cbslocal.com/2013/01/01/4-pe...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>460726</td>
+      <td>2013-01-01</td>
+      <td>California</td>
+      <td>Hawthorne</td>
+      <td>13500 block of Cerise Avenue</td>
+      <td>1</td>
+      <td>3</td>
+      <td>http://www.gunviolencearchive.org/incident/460726</td>
+      <td>http://www.dailybulletin.com/article/zz/201301...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::20</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male</td>
+      <td>0::Bernard Gillis</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Injured||2::Injured||3::Injured</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://losangeles.cbslocal.com/2013/01/01/man-...</td>
+      <td>62.0</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>478855</td>
+      <td>2013-01-01</td>
+      <td>Ohio</td>
+      <td>Lorain</td>
+      <td>1776 East 28th Street</td>
+      <td>1</td>
+      <td>3</td>
+      <td>http://www.gunviolencearchive.org/incident/478855</td>
+      <td>http://chronicle.northcoastnow.com/2013/02/14/...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::25||1::31||2::33||3::34||4::33</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Male||2::Male||3::Male||4::Male</td>
+      <td>0::Damien Bell||1::Desmen Noble||2::Herman Sea...</td>
+      <td>NaN</td>
+      <td>0::Injured, Unharmed, Arrested||1::Unharmed, A...</td>
+      <td>0::Subject-Suspect||1::Subject-Suspect||2::Vic...</td>
+      <td>http://www.morningjournal.com/general-news/201...</td>
+      <td>56.0</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>478925</td>
+      <td>2013-01-05</td>
+      <td>Colorado</td>
+      <td>Aurora</td>
+      <td>16000 block of East Ithaca Place</td>
+      <td>4</td>
+      <td>0</td>
+      <td>http://www.gunviolencearchive.org/incident/478925</td>
+      <td>http://www.dailydemocrat.com/20130106/aurora-s...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::29||1::33||2::56||3::33</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Female||1::Male||2::Male||3::Male</td>
+      <td>0::Stacie Philbrook||1::Christopher Ratliffe||...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Subject-Su...</td>
+      <td>http://denver.cbslocal.com/2013/01/06/officer-...</td>
+      <td>40.0</td>
+      <td>28.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>478959</td>
+      <td>2013-01-07</td>
+      <td>North Carolina</td>
+      <td>Greensboro</td>
+      <td>307 Mourning Dove Terrace</td>
+      <td>2</td>
+      <td>2</td>
+      <td>http://www.gunviolencearchive.org/incident/478959</td>
+      <td>http://www.journalnow.com/news/local/article_d...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::18||1::46||2::14||3::47</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Teen 12-17||3::...</td>
+      <td>0::Female||1::Male||2::Male||3::Female</td>
+      <td>0::Danielle Imani Jameison||1::Maurice Eugene ...</td>
+      <td>3::Family</td>
+      <td>0::Injured||1::Injured||2::Killed||3::Killed</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Subject-Su...</td>
+      <td>http://myfox8.com/2013/01/08/update-mother-sho...</td>
+      <td>62.0</td>
+      <td>27.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 29 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">salamuuu</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;n_killed&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">salamuuu</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>incident_id</th>
+      <th>date</th>
+      <th>state</th>
+      <th>city_or_county</th>
+      <th>address</th>
+      <th>n_killed</th>
+      <th>n_injured</th>
+      <th>incident_url</th>
+      <th>source_url</th>
+      <th>incident_url_fields_missing</th>
+      <th>...</th>
+      <th>participant_age</th>
+      <th>participant_age_group</th>
+      <th>participant_gender</th>
+      <th>participant_name</th>
+      <th>participant_relationship</th>
+      <th>participant_status</th>
+      <th>participant_type</th>
+      <th>sources</th>
+      <th>state_house_district</th>
+      <th>state_senate_district</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>130448</th>
+      <td>577157</td>
+      <td>2016-06-12</td>
+      <td>Florida</td>
+      <td>Orlando</td>
+      <td>1912 S Orange Avenue</td>
+      <td>50</td>
+      <td>53</td>
+      <td>http://www.gunviolencearchive.org/incident/577157</td>
+      <td>https://www.reuters.com/article/us-orlando-sho...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::34||1::23||2::20||3::22||4::36||5::22||6::2...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Male||2::Male||3::Male||4::Male||5...</td>
+      <td>0::Edward Sotomayor Jr||1::Stanley Almodovar I...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.cityoforlando.net/police/mass-shoot...</td>
+      <td>47.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>217151</th>
+      <td>980577</td>
+      <td>2017-11-05</td>
+      <td>Texas</td>
+      <td>Sutherland Springs</td>
+      <td>216 4th St</td>
+      <td>27</td>
+      <td>20</td>
+      <td>http://www.gunviolencearchive.org/incident/980577</td>
+      <td>http://abc7.com/full-list-of-texas-church-shoo...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::14||1::7||2::5||3::30||4::58||5::60||6::36|...</td>
+      <td>0::Teen 12-17||1::Child 0-11||2::Child 0-11||3...</td>
+      <td>0::Female||1::Female||2::Female||3::Female||4:...</td>
+      <td>0::Annabelle Renee Pomeroy||1::Emily Garcia||2...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://13wham.com/news/nation-world/multiple-i...</td>
+      <td>44.0</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>232745</th>
+      <td>1049217</td>
+      <td>2018-02-14</td>
+      <td>Florida</td>
+      <td>Pompano Beach (Parkland)</td>
+      <td>5901 Pine Island Rd</td>
+      <td>17</td>
+      <td>17</td>
+      <td>http://www.gunviolencearchive.org/incident/104...</td>
+      <td>http://www.orlandosentinel.com/news/fl-florida...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::35||1::14||2::17||3::37||4::14||5::15||6::4...</td>
+      <td>0::Adult 18+||1::Teen 12-17||2::Teen 12-17||3:...</td>
+      <td>0::Male||1::Male||2::Male||3::Male||4::Female|...</td>
+      <td>0::Scott Beigel||1::Martin Duque Anguiano||2::...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://cbs12.com/news/local/shooting-at-marjor...</td>
+      <td>96.0</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>101531</th>
+      <td>456893</td>
+      <td>2015-12-02</td>
+      <td>California</td>
+      <td>San Bernardino</td>
+      <td>1365 South Waterman Avenue</td>
+      <td>16</td>
+      <td>19</td>
+      <td>http://www.gunviolencearchive.org/incident/456893</td>
+      <td>http://www.latimes.com/local/lanow/la-me-ln-sa...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::42||1::58||2::52||3::37||4::40||5::27||6::4...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Male||3::Male||4::Male||5::Female|...</td>
+      <td>0::Larry Daniel Kaufman||1::Damian Meins||2::N...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.sbsun.com/general-news/20151202/14-...</td>
+      <td>40.0</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>480366</td>
+      <td>2013-09-16</td>
+      <td>District of Columbia</td>
+      <td>Washington Navy Yard</td>
+      <td>1336 Isaac Hull Ave</td>
+      <td>11</td>
+      <td>3</td>
+      <td>http://www.gunviolencearchive.org/incident/480366</td>
+      <td>https://www.washingtonpost.com/local/police-se...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::59||1::53||2::51||3::53||4::62||5::73||6::5...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Male||2::Male||3::Female||4::Femal...</td>
+      <td>0::Michael Arnold||1::Martin Bodrog||2::Arthur...</td>
+      <td>15::Co-worker</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.nbcwashington.com/news/local/Confir...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>92624</th>
+      <td>423223</td>
+      <td>2015-10-01</td>
+      <td>Oregon</td>
+      <td>Roseburg</td>
+      <td>1140 Umpqua College Rd</td>
+      <td>10</td>
+      <td>9</td>
+      <td>http://www.gunviolencearchive.org/incident/423223</td>
+      <td>http://www.kval.com/news/local/Nine-wounded-vi...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::19||1::18||2::59||3::18||4::33||5::67||6::4...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Female||1::Male||2::Female||3::Male||4::Mal...</td>
+      <td>0::Lucero Alcaraz||1::Quinn Glen Cooper||2::Ki...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.statesmanjournal.com/story/news/201...</td>
+      <td>7.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>207904</th>
+      <td>930569</td>
+      <td>2017-09-10</td>
+      <td>Texas</td>
+      <td>Plano</td>
+      <td>1712 West Spring Creek Parkway</td>
+      <td>9</td>
+      <td>1</td>
+      <td>http://www.gunviolencearchive.org/incident/930569</td>
+      <td>http://www.fox4news.com/news/plano-gunman-extr...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::27||1::33||2::22||3::24||4::29||5::31||6::2...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Female||1::Male||2::Male||3::Female||4::Mal...</td>
+      <td>0::Meredith Lane Hight||1::Anthony Michael Cro...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.nbcdfw.com/news/local/8-People-Kill...</td>
+      <td>67.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>75530</th>
+      <td>359830</td>
+      <td>2015-06-17</td>
+      <td>South Carolina</td>
+      <td>Charleston</td>
+      <td>110 Calhoun Street</td>
+      <td>9</td>
+      <td>0</td>
+      <td>http://www.gunviolencearchive.org/incident/359830</td>
+      <td>http://7online.com/news/charleston-shooting-su...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::41||1::26||2::74||3::54||4::46||5::70||6::8...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Male||2::Male||3::Female||4::Femal...</td>
+      <td>0::Rev. Clementa Pinckney||1::Tywanza Sanders|...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://abc11.com/news/charleston-sc-police-res...</td>
+      <td>111.0</td>
+      <td>42.0</td>
+    </tr>
+    <tr>
+      <th>70511</th>
+      <td>341622</td>
+      <td>2015-05-17</td>
+      <td>Texas</td>
+      <td>Waco</td>
+      <td>4671 S Jack Kultgen Fwy</td>
+      <td>9</td>
+      <td>18</td>
+      <td>http://www.gunviolencearchive.org/incident/341622</td>
+      <td>http://www.wacotrib.com/news/twin-peaks-biker-...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::31||1::65||2::46||3::44||4::43||5::39||6::4...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Male||2::Male||3::Male||4::Male||5...</td>
+      <td>0::Richard Matthew Jordan||1::Jesus Delgado Ro...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.kvue.com/story/news/crime/2015/05/1...</td>
+      <td>NaN</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>83911</th>
+      <td>390526</td>
+      <td>2015-08-08</td>
+      <td>Texas</td>
+      <td>Houston</td>
+      <td>2211 Falling Oaks</td>
+      <td>8</td>
+      <td>0</td>
+      <td>http://www.gunviolencearchive.org/incident/390526</td>
+      <td>http://www.star-telegram.com/news/state/texas/...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::40||1::50||2::13||3::11||4::10||5::9||6::7|...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Teen 12-17||3::...</td>
+      <td>0::Female||1::Male||2::Male||3::Female||4::Mal...</td>
+      <td>0::Valerie Jackson||1::Dwayne Jackson||2::Nath...</td>
+      <td>8::Family</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.chron.com/news/houston-texas/housto...</td>
+      <td>140.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>58843</th>
+      <td>298122</td>
+      <td>2015-02-26</td>
+      <td>Missouri</td>
+      <td>Tyrone</td>
+      <td>18279 Highway H</td>
+      <td>8</td>
+      <td>1</td>
+      <td>http://www.gunviolencearchive.org/incident/298122</td>
+      <td>http://www.times-standard.com/general-news/201...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::68||1::50||2::48||3::52||4::47||5::46||6::4...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Male||2::Female||3::Male||4::Femal...</td>
+      <td>0::Darrell Shriver||1::Harold Wayne Aldridge||...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.stltoday.com/news/local/crime-and-c...</td>
+      <td>142.0</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <th>37527</th>
+      <td>192851</td>
+      <td>2014-09-18</td>
+      <td>Florida</td>
+      <td>Bell</td>
+      <td>NW 30th Street and NW 39th Terrace</td>
+      <td>8</td>
+      <td>0</td>
+      <td>http://www.gunviolencearchive.org/incident/192851</td>
+      <td>http://www.wogx.com/story/26572200/multiple-sh...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::51||1::28||2::1||3::4||4::5||5::8||6::9||7::11</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Child 0-11||3::...</td>
+      <td>0::Male||1::Female||2::Female||3::Male||4::Fem...</td>
+      <td>0::Don Charles Spirit||1::Sarah Lorraine Spiri...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.gainesville.com/article/20140918/AR...</td>
+      <td>21.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>122526</th>
+      <td>545525</td>
+      <td>2016-04-22</td>
+      <td>Ohio</td>
+      <td>Piketon</td>
+      <td>4077 Union Hill Road</td>
+      <td>8</td>
+      <td>0</td>
+      <td>http://www.gunviolencearchive.org/incident/545525</td>
+      <td>http://www.youralaskalink.com/news/family-want...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::37||1::16||2::38||3::44||4::20||5::40||6::2...</td>
+      <td>0::Adult 18+||1::Teen 12-17||2::Adult 18+||3::...</td>
+      <td>0::Female||1::Male||2::Male||3::Male||4::Femal...</td>
+      <td>0::Dana Manley Rhoden||1::Christopher Rhoden, ...</td>
+      <td>8::Family</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.chillicothegazette.com/story/news/l...</td>
+      <td>90.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>189720</th>
+      <td>853756</td>
+      <td>2017-05-27</td>
+      <td>Mississippi</td>
+      <td>Bogue Chitto</td>
+      <td>2871 Lee Dr</td>
+      <td>8</td>
+      <td>1</td>
+      <td>http://www.gunviolencearchive.org/incident/853756</td>
+      <td>http://www.bradfordera.com/news/nation/mississ...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::36||1::55||2::53||3::35||4::18||5::11||6::4...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Female||2::Female||3::Female||5::M...</td>
+      <td>0::Deputy William Durr||1::Barbara Mitchell||2...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://kron4.com/2017/05/28/deputy-sheriff-7-o...</td>
+      <td>53.0</td>
+      <td>39.0</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>491265</td>
+      <td>2013-07-26</td>
+      <td>Florida</td>
+      <td>Hialeah</td>
+      <td>1485 W 46th St</td>
+      <td>7</td>
+      <td>0</td>
+      <td>http://www.gunviolencearchive.org/incident/491265</td>
+      <td>https://en.wikipedia.org/wiki/2013_Hialeah_sho...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::79||1::69||2::33||3::64||4::51||5::17||6::42</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Female||2::Male||3::Male||4::Femal...</td>
+      <td>0::Italo Pisciotti||1::Samira Pisciotti||2::Ca...</td>
+      <td>6::Mass shooting - Perp Knows Victims</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.miamiherald.com/news/special-report...</td>
+      <td>110.0</td>
+      <td>38.0</td>
+    </tr>
+    <tr>
+      <th>49958</th>
+      <td>263556</td>
+      <td>2014-12-15</td>
+      <td>Pennsylvania</td>
+      <td>Lansdale</td>
+      <td>100 block of West 5th St</td>
+      <td>7</td>
+      <td>0</td>
+      <td>http://www.gunviolencearchive.org/incident/263556</td>
+      <td>http://articles.philly.com/2015-12-16/news/690...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::33||1::57||2::75||3::36||4::39||5::14||6::1...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Female||1::Female||2::Female||3::Female||4:...</td>
+      <td>0::Nicole Hill Stone||1::Jo Anne Koder Gilbert...</td>
+      <td>7::Family</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.nbcphiladelphia.com/news/local/Lans...</td>
+      <td>53.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>482856</td>
+      <td>2013-03-13</td>
+      <td>New York</td>
+      <td>Mohawk</td>
+      <td>17 W Main St</td>
+      <td>6</td>
+      <td>2</td>
+      <td>http://www.gunviolencearchive.org/incident/482856</td>
+      <td>http://www.syracuse.com/news/index.ssf/2013/03...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::68||1::57||2::66||3::67||4::62||5::51||6::2...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Male||2::Male||4::Male||5::Male||6...</td>
+      <td>0::Harry Montgomery||1::Michael Ransear||2::Jo...</td>
+      <td>7::Aquaintance</td>
+      <td>0::Killed||1::Killed||2::Injured||3::Injured||...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.cbsnews.com/news/upstate-new-york-s...</td>
+      <td>101.0</td>
+      <td>51.0</td>
+    </tr>
+    <tr>
+      <th>218580</th>
+      <td>987611</td>
+      <td>2017-11-14</td>
+      <td>California</td>
+      <td>Corning</td>
+      <td>17357 Stagecoach Rd</td>
+      <td>6</td>
+      <td>12</td>
+      <td>http://www.gunviolencearchive.org/incident/987611</td>
+      <td>http://www.times-standard.com/general-news/201...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::56||1::38||2::55||3::68||4::38||5::39||6::3...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Male||1::Female||2::Female||3::Female||4::M...</td>
+      <td>0::Joseph Edward McHugh III||1::Barbara Ann Gl...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://www.redding.com/story/news/local/2017/1...</td>
+      <td>3.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>485811</td>
+      <td>2013-04-24</td>
+      <td>Illinois</td>
+      <td>Manchester</td>
+      <td>East Street</td>
+      <td>6</td>
+      <td>1</td>
+      <td>http://www.gunviolencearchive.org/incident/485811</td>
+      <td>http://fox2now.com/2013/04/25/family-needs-hel...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::64||1::22||2::29||3::5||4::1</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::C...</td>
+      <td>0::Female||1::Female||2::Male||3::Male||4::Mal...</td>
+      <td>0::Joanne Sinclaire||1::Brittany Luark||2::Roy...</td>
+      <td>6::Significant others - current or former</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://fox2now.com/2013/04/24/possible-shootin...</td>
+      <td>100.0</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <th>112882</th>
+      <td>508640</td>
+      <td>2016-02-20</td>
+      <td>Michigan</td>
+      <td>Kalamazoo</td>
+      <td>5581 Cracker Barrel Blvd</td>
+      <td>6</td>
+      <td>2</td>
+      <td>http://www.gunviolencearchive.org/incident/508640</td>
+      <td>http://www.wzzm13.com/news/local/kalamazoo/kal...</td>
+      <td>False</td>
+      <td>...</td>
+      <td>0::63||1::60||2::74||3::68||4::53||5::17||6::1...</td>
+      <td>0::Adult 18+||1::Adult 18+||2::Adult 18+||3::A...</td>
+      <td>0::Female||1::Female||2::Female||3::Female||4:...</td>
+      <td>0::Mary Lou Nye||1::Mary Jo Nye||2::Dorothy Br...</td>
+      <td>NaN</td>
+      <td>0::Killed||1::Killed||2::Killed||3::Killed||4:...</td>
+      <td>0::Victim||1::Victim||2::Victim||3::Victim||4:...</td>
+      <td>http://woodtv.com/2016/02/20/multiple-fatally-...</td>
+      <td>61.0</td>
+      <td>20.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>20 rows × 29 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Columns for the dataset</span>
+<span class="n">columns1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[29]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>Index([&#39;incident_id&#39;, &#39;date&#39;, &#39;state&#39;, &#39;city_or_county&#39;, &#39;address&#39;, &#39;n_killed&#39;,
+       &#39;n_injured&#39;, &#39;incident_url&#39;, &#39;source_url&#39;,
+       &#39;incident_url_fields_missing&#39;, &#39;congressional_district&#39;, &#39;gun_stolen&#39;,
+       &#39;gun_type&#39;, &#39;incident_characteristics&#39;, &#39;latitude&#39;,
+       &#39;location_description&#39;, &#39;longitude&#39;, &#39;n_guns_involved&#39;, &#39;notes&#39;,
+       &#39;participant_age&#39;, &#39;participant_age_group&#39;, &#39;participant_gender&#39;,
+       &#39;participant_name&#39;, &#39;participant_relationship&#39;, &#39;participant_status&#39;,
+       &#39;participant_type&#39;, &#39;sources&#39;, &#39;state_house_district&#39;,
+       &#39;state_senate_district&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># data type of a dataset downloaded from kaggle.com</span>
+<span class="n">datas</span><span class="o">.</span><span class="n">get_dtype_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[30]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>bool        1
+float64     6
+int64       3
+object     19
+dtype: int64
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># length of dataset from kaggle</span>
+<span class="n">len_datas</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[31]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>239677
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># shape of the dataset, this shows numbers of rows and columns</span>
+<span class="n">datas</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[32]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>(239677, 29)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># size of the dataset</span>
+<span class="n">datas</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[33]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>6950633
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># it gives us brief information about the dataset</span>
+<span class="n">datas</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[34]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>incident_id</th>
+      <th>n_killed</th>
+      <th>n_injured</th>
+      <th>congressional_district</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>n_guns_involved</th>
+      <th>state_house_district</th>
+      <th>state_senate_district</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>2.396770e+05</td>
+      <td>239677.000000</td>
+      <td>239677.000000</td>
+      <td>227733.000000</td>
+      <td>231754.000000</td>
+      <td>231754.000000</td>
+      <td>140226.000000</td>
+      <td>200905.000000</td>
+      <td>207342.00000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.593343e+05</td>
+      <td>0.252290</td>
+      <td>0.494007</td>
+      <td>8.001265</td>
+      <td>37.546598</td>
+      <td>-89.338348</td>
+      <td>1.372442</td>
+      <td>55.447132</td>
+      <td>20.47711</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.931287e+05</td>
+      <td>0.521779</td>
+      <td>0.729952</td>
+      <td>8.480835</td>
+      <td>5.130763</td>
+      <td>14.359546</td>
+      <td>4.678202</td>
+      <td>42.048117</td>
+      <td>14.20456</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>9.211400e+04</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>19.111400</td>
+      <td>-171.429000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.00000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.085450e+05</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>2.000000</td>
+      <td>33.903400</td>
+      <td>-94.158725</td>
+      <td>1.000000</td>
+      <td>21.000000</td>
+      <td>9.00000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.435870e+05</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>5.000000</td>
+      <td>38.570600</td>
+      <td>-86.249600</td>
+      <td>1.000000</td>
+      <td>47.000000</td>
+      <td>19.00000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>8.172280e+05</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>10.000000</td>
+      <td>41.437375</td>
+      <td>-80.048625</td>
+      <td>1.000000</td>
+      <td>84.000000</td>
+      <td>30.00000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.083472e+06</td>
+      <td>50.000000</td>
+      <td>53.000000</td>
+      <td>53.000000</td>
+      <td>71.336800</td>
+      <td>97.433100</td>
+      <td>400.000000</td>
+      <td>901.000000</td>
+      <td>94.00000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># information about dataset</span>
+<span class="n">datas</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 239677 entries, 0 to 239676
+Data columns (total 29 columns):
+incident_id                    239677 non-null int64
+date                           239677 non-null object
+state                          239677 non-null object
+city_or_county                 239677 non-null object
+address                        223180 non-null object
+n_killed                       239677 non-null int64
+n_injured                      239677 non-null int64
+incident_url                   239677 non-null object
+source_url                     239209 non-null object
+incident_url_fields_missing    239677 non-null bool
+congressional_district         227733 non-null float64
+gun_stolen                     140179 non-null object
+gun_type                       140226 non-null object
+incident_characteristics       239351 non-null object
+latitude                       231754 non-null float64
+location_description           42089 non-null object
+longitude                      231754 non-null float64
+n_guns_involved                140226 non-null float64
+notes                          158660 non-null object
+participant_age                147379 non-null object
+participant_age_group          197558 non-null object
+participant_gender             203315 non-null object
+participant_name               117424 non-null object
+participant_relationship       15774 non-null object
+participant_status             212051 non-null object
+participant_type               214814 non-null object
+sources                        239068 non-null object
+state_house_district           200905 non-null float64
+state_senate_district          207342 non-null float64
+dtypes: bool(1), float64(6), int64(3), object(19)
+memory usage: 51.4+ MB
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#now we move from states and look at the cities with the highest</span>
+<span class="c1">#gun violence in the United States. We can see that Chicago, Baltimore</span>
+<span class="c1">#Washignton DC are the highest cities in gun violence.</span>
+<span class="c1">#it is intresting that there are only two cities from</span>
+<span class="c1">#the top four states, which are Chicagoand Houston.</span>
+<span class="n">topcitywise_crime_rate</span> <span class="o">=</span> <span class="n">datas</span><span class="p">[</span><span class="s2">&quot;city_or_county&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">topcitywise_crime_rate_plot</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">topcitywise_crime_rate</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">topcitywise_crime_rate</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;cubehelix&#39;</span><span class="p">)</span>
+<span class="n">topcitywise_crime_rate_plot</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">topcitywise_crime_rate_plot</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">topcitywise_crime_rate_plot</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Cities or Counties with highest number of Gun Violence&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[36]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>Text(0.5,1,&#39;Cities or Counties with highest number of Gun Violence&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_41_1.png" src="_images/projectfinal_41_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#here we show the map of the United States with the highest</span>
+<span class="c1">#places (cities) with gun violence</span>
+<span class="c1">#we see that it is mostly spread in the east, west cost</span>
+<span class="c1">#and the south. With red points almost everywhere except</span>
+<span class="c1">#the centre areas of the country.</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">conda</span>
+
+<span class="n">conda_file_dir</span> <span class="o">=</span> <span class="n">conda</span><span class="o">.</span><span class="vm">__file__</span>
+<span class="n">conda_dir</span> <span class="o">=</span> <span class="n">conda_file_dir</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;lib&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">proj_lib</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">conda_dir</span><span class="p">,</span> <span class="s1">&#39;share&#39;</span><span class="p">),</span> <span class="s1">&#39;proj&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PROJ_LIB&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">proj_lib</span>
+
+<span class="kn">from</span> <span class="nn">mpl_toolkits.basemap</span> <span class="k">import</span> <span class="n">Basemap</span>
+
+<span class="n">map1</span> <span class="o">=</span><span class="n">datas</span><span class="p">[</span><span class="n">datas</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
+<span class="n">map1</span> <span class="o">=</span> <span class="n">map1</span><span class="p">[[</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span><span class="s2">&quot;state&quot;</span><span class="p">,</span><span class="s2">&quot;city_or_county&quot;</span><span class="p">]]</span>
+
+<span class="n">m</span><span class="o">=</span><span class="n">Basemap</span><span class="p">(</span><span class="n">lat_0</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=-</span><span class="mi">100</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;ortho&#39;</span> <span class="p">)</span>
+
+<span class="n">lat</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">map1</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">map1</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">m</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span><span class="n">lat</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">m</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;go&quot;</span><span class="p">,</span><span class="n">markersize</span> <span class="o">=.</span><span class="mi">2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;RED&quot;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">drawcountries</span><span class="p">()</span>
+<span class="n">m</span><span class="o">.</span><span class="n">drawcoastlines</span><span class="p">()</span>
+<span class="n">m</span><span class="o">.</span><span class="n">bluemarble</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;LOCATIONS WHICH REPRESENT GUN VIOLENCE&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_42_1.png" src="_images/projectfinal_42_1.png" />
+</div>
+</div>
+<p>This map shows the number of incidents of gun violence in the state of
+Iowa As we can see from the map there is more concentration of re dots
+on the bigger cities with more population like Des Moines, Iowa city and
+Cedar Rapids The same happens when we look at Illinois, there is a lot
+of red dots around Chicago comparing to the rest of the state. This also
+confirm the trend that we have been seeing of the big cities in the
+states with th mopst incidents of gun violence</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+
+<span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.basemap</span> <span class="k">import</span> <span class="n">Basemap</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="p">)</span>
+<span class="c1"># total attack(killed + injured)</span>
+<span class="n">datas</span><span class="p">[</span><span class="s2">&quot;total_attack&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">n_killed</span> <span class="o">+</span> <span class="n">datas</span><span class="o">.</span><span class="n">n_injured</span>
+
+<span class="n">Iowa</span> <span class="o">=</span> <span class="n">datas</span><span class="p">[</span><span class="n">datas</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;Iowa&quot;</span><span class="p">]</span>
+
+<span class="c1"># read in data to use for plotted points</span>
+
+<span class="n">lat</span> <span class="o">=</span> <span class="n">Iowa</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">Iowa</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># determine range to print based on min, max lat and lon of the data</span>
+<span class="n">margin</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># buffer to add to the range</span>
+<span class="n">lat_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span> <span class="o">-</span> <span class="n">margin</span>
+<span class="n">lat_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span> <span class="o">+</span> <span class="n">margin</span>
+<span class="n">lon_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span> <span class="o">-</span> <span class="n">margin</span>
+<span class="n">lon_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span> <span class="o">+</span> <span class="n">margin</span>
+
+<span class="c1"># create map using BASEMAP</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">Basemap</span><span class="p">(</span><span class="n">llcrnrlon</span><span class="o">=</span><span class="n">lon_min</span><span class="p">,</span>
+            <span class="n">llcrnrlat</span><span class="o">=</span><span class="n">lat_min</span><span class="p">,</span>
+            <span class="n">urcrnrlon</span><span class="o">=</span><span class="n">lon_max</span><span class="p">,</span>
+            <span class="n">urcrnrlat</span><span class="o">=</span><span class="n">lat_max</span><span class="p">,</span>
+            <span class="n">lat_0</span><span class="o">=</span><span class="p">(</span><span class="n">lat_max</span> <span class="o">-</span> <span class="n">lat_min</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">lon_0</span><span class="o">=</span><span class="p">(</span><span class="n">lon_max</span><span class="o">-</span><span class="n">lon_min</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;merc&#39;</span><span class="p">,</span>
+            <span class="n">resolution</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span>
+            <span class="n">area_thresh</span><span class="o">=</span><span class="mf">1000000.</span><span class="p">,</span>
+            <span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">drawcoastlines</span><span class="p">()</span>
+<span class="n">m</span><span class="o">.</span><span class="n">drawcountries</span><span class="p">()</span>
+<span class="n">m</span><span class="o">.</span><span class="n">drawstates</span><span class="p">()</span>
+<span class="n">m</span><span class="o">.</span><span class="n">drawmapboundary</span><span class="p">(</span><span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;#46bcec&#39;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">fillcontinents</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="n">lake_color</span><span class="o">=</span><span class="s1">&#39;#46bcec&#39;</span><span class="p">)</span>
+<span class="c1"># convert lat and lon to map projection coordinates</span>
+<span class="n">lons</span><span class="p">,</span> <span class="n">lats</span> <span class="o">=</span> <span class="n">m</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+<span class="c1"># plot points as red dots</span>
+<span class="n">m</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_44_0.png" src="_images/projectfinal_44_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#here we plot gun violence incidents per year in the past 4 years</span>
+<span class="c1">#we can see that the gun violence is increasing every year</span>
+<span class="c1">#in the past 4 years to reach 61000 incidents in 2017.</span>
+<span class="c1">#this year so far there was 13000 incidents, thsi counts only</span>
+<span class="c1">#till March 31st 2018.</span>
+<span class="n">datas</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">datas</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+
+<span class="n">datas</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">datas</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">year</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">datas</span><span class="o">.</span><span class="n">date</span><span class="p">))]</span>
+
+<span class="n">f</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">year_count</span> <span class="o">=</span> <span class="n">datas</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">year_count</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">year_count</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s1">&#39;PRGn&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">patches</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span><span class="o">+</span><span class="mf">0.3</span><span class="p">,</span><span class="n">i</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="o">+</span><span class="mi">1000</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;Blue&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gun Violence per Year&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;Green&#39;</span><span class="p">)</span>
+<span class="n">y_axis</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_45_0.png" src="_images/projectfinal_45_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#this plot shows the graph of number of people killed and</span>
+<span class="c1">#with number of people injured seperately in the past 4 years</span>
+<span class="c1">#there is increase  in both, but the number of people injuries is</span>
+<span class="c1">#increasing more, we disregard the decrease in 2018 because it does not</span>
+<span class="c1">#include data from the whole year.</span>
+<span class="n">datas</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">datas</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">datas</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">datas</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="n">df_year</span><span class="o">=</span><span class="n">datas</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">])[</span><span class="s1">&#39;n_killed&#39;</span><span class="p">,</span><span class="s1">&#39;n_injured&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+
+<span class="n">df_year</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[40]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x108930a58&gt;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_46_1.png" src="_images/projectfinal_46_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#here we show the correlations of our Kaggle dataset</span>
+<span class="c1">#it shows taht there are some positive relationships</span>
+<span class="c1">#between variables like state senate district and state</span>
+<span class="c1">#house district.</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[41]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10a9af860&gt;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_47_1.png" src="_images/projectfinal_47_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#This graph shows us number of guns used per incident</span>
+
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">datas</span><span class="p">[</span><span class="s1">&#39;numb_guns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datas</span><span class="p">[</span><span class="s1">&#39;n_guns_involved&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="s2">&quot;10+&quot;</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">10</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">tempdf1</span> <span class="o">=</span> <span class="n">datas</span><span class="p">[</span><span class="s1">&#39;numb_guns&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tempdf1</span> <span class="o">=</span> <span class="n">tempdf1</span><span class="p">[</span><span class="n">tempdf1</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;nan&#39;</span><span class="p">]</span>
+
+
+<span class="n">labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tempdf1</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">])</span>
+<span class="n">values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tempdf1</span><span class="p">[</span><span class="s1">&#39;numb_guns&#39;</span><span class="p">])</span>
+
+<span class="n">trace1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Pie</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#FEBFB3&#39;</span><span class="p">,</span> <span class="s1">&#39;#E1396C&#39;</span><span class="p">,</span> <span class="s1">&#39;#96D38C&#39;</span><span class="p">,</span> <span class="s1">&#39;#D0F9B1&#39;</span><span class="p">,</span> <span class="s1">&#39;#c0d1ed&#39;</span><span class="p">,</span> <span class="s1">&#39;#efaceb&#39;</span><span class="p">,</span> <span class="s1">&#39;#f5f794&#39;</span><span class="p">,</span> <span class="s1">&#39;#94f794&#39;</span><span class="p">,</span> <span class="s1">&#39;#fcc771&#39;</span><span class="p">]))</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of Guns Used&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">));</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">trace1</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
+<span class="n">iplot</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script><script type="text/javascript">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script><script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window._Plotly) {require(['plotly'],function(plotly) {window._Plotly=plotly;});}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div id="cbcad1e6-1078-40bd-9338-4c27b39dada2" style="height: 500px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("cbcad1e6-1078-40bd-9338-4c27b39dada2", [{"labels": ["1.0", "2.0", "3.0", "10+", "4.0", "5.0", "6.0", "7.0", "8.0", "9.0"], "marker": {"colors": ["#FEBFB3", "#E1396C", "#96D38C", "#D0F9B1", "#c0d1ed", "#efaceb", "#f5f794", "#94f794", "#fcc771"]}, "values": [127548, 7477, 2021, 1109, 871, 435, 285, 232, 137, 111], "type": "pie", "uid": "3072d9f4-86c2-40c6-9fdb-78a2f3ae4d1b"}], {"height": 500, "legend": {"orientation": "h"}, "title": "Number of Guns Used"}, {"showLink": true, "linkText": "Export to plot.ly", "plotlyServerURL": "https://plot.ly"})});</script><script type="text/javascript">window.addEventListener("resize", function(){window._Plotly.Plots.resize(document.getElementById("cbcad1e6-1078-40bd-9338-4c27b39dada2"));});</script></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1">#Total Number of people killed and injured for by districts</span>
+
+<span class="n">datas</span><span class="p">[</span><span class="s2">&quot;casualities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datas</span><span class="p">[</span><span class="s2">&quot;n_killed&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">datas</span><span class="p">[</span><span class="s2">&quot;n_injured&quot;</span><span class="p">]</span>
+<span class="n">state_district</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;state&quot;</span><span class="p">,</span><span class="s2">&quot;congressional_district&quot;</span><span class="p">])[</span><span class="s2">&quot;casualities&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">state_district</span><span class="p">[</span><span class="s2">&quot;congressional_district&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_district</span><span class="p">[</span><span class="s2">&quot;congressional_district&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">state_district</span> <span class="o">=</span> <span class="n">state_district</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;casualities&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">state_district</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">,</span><span class="s2">&quot;casualities&quot;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">state_district</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Killed&quot;</span><span class="p">,</span>
+            <span class="n">linewidth</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span> <span class="p">,</span><span class="n">edgecolor</span> <span class="o">=</span><span class="s2">&quot;k&quot;</span> <span class="o">*</span> <span class="n">state_district</span><span class="p">[</span><span class="s2">&quot;congressional_district&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">,</span><span class="n">prop</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">15</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">70</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Total Number of people killed and injured for by districts&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+
+
+
+
+
+
+
+
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/projectfinal_49_0.png" src="_images/projectfinal_49_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">state_district</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[44]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>congressional_district</th>
+      <th>casualities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>143</th>
+      <td>Illinois</td>
+      <td>7</td>
+      <td>5731</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>Louisiana</td>
+      <td>2</td>
+      <td>3427</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>Illinois</td>
+      <td>1</td>
+      <td>3388</td>
+    </tr>
+    <tr>
+      <th>230</th>
+      <td>Missouri</td>
+      <td>1</td>
+      <td>2879</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>Maryland</td>
+      <td>7</td>
+      <td>2719</td>
+    </tr>
+    <tr>
+      <th>416</th>
+      <td>Virginia</td>
+      <td>3</td>
+      <td>2260</td>
+    </tr>
+    <tr>
+      <th>372</th>
+      <td>Tennessee</td>
+      <td>9</td>
+      <td>2243</td>
+    </tr>
+    <tr>
+      <th>442</th>
+      <td>Wisconsin</td>
+      <td>4</td>
+      <td>1994</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Florida</td>
+      <td>5</td>
+      <td>1956</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Alabama</td>
+      <td>7</td>
+      <td>1820</td>
+    </tr>
+    <tr>
+      <th>317</th>
+      <td>Ohio</td>
+      <td>11</td>
+      <td>1758</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>Illinois</td>
+      <td>2</td>
+      <td>1675</td>
+    </tr>
+    <tr>
+      <th>336</th>
+      <td>Pennsylvania</td>
+      <td>2</td>
+      <td>1671</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>District of Columbia</td>
+      <td>1</td>
+      <td>1602</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>Indiana</td>
+      <td>7</td>
+      <td>1593</td>
+    </tr>
+    <tr>
+      <th>303</th>
+      <td>North Carolina</td>
+      <td>12</td>
+      <td>1498</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>Illinois</td>
+      <td>4</td>
+      <td>1494</td>
+    </tr>
+    <tr>
+      <th>360</th>
+      <td>South Carolina</td>
+      <td>6</td>
+      <td>1297</td>
+    </tr>
+    <tr>
+      <th>335</th>
+      <td>Pennsylvania</td>
+      <td>1</td>
+      <td>1270</td>
+    </tr>
+    <tr>
+      <th>292</th>
+      <td>North Carolina</td>
+      <td>1</td>
+      <td>1257</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="Conclusion">
+<h1>Conclusion<a class="headerlink" href="#Conclusion" title="Permalink to this headline">¶</a></h1>
+<p>Overall, from our visualization, we notice that gun violence is spread
+throughout the whole country except for the middle region. There are
+regions with the most gun violence incidents such as Illinois,
+California, Texas, and Florida. Those are some of the most populated
+states in the United States. Which might indicate that the more
+population of the state the more incidents and gun violence in that
+state. In those states, gun violence is more in the big cities than the
+rest of the state which is due to the higher population there. But, it
+can also be explained with other reasons and factors like the increase
+in gun sales in those states. 91% of the incidents happen with one gun,
+which might indicate that most of the incidents are mass shootings,
+unintentional shootings or big attacks to certain areas. So, the sale
+and availability of guns are one of the main reasons for the gain
+violence increase in the US in the past five years according to our
+data. In addition, the increase of home invasions in those states is one
+of the reasons for the gun violence increase. Home invasions are highly
+correlated with an unintentional shooting which might be the direct
+reason for the increase of unintentional shooting in these states. Then,
+we noticed that there is an increase in the number of children involved
+and killed in gun violence in the past years especially in Chicago. This
+might be due to the many reasons such as violent video games. Thus, our
+data visualization showed the locations and distribution of gun
+b=violence in the United States and some of the reason like gun sales,
+children involvement and the increase of home invasions. In the future,
+we would like to continue working on this project and try to join our
+datasets with other datasets to explain more reasons for gun violence.
+We would like to look for gun violence per capita or per 100000 people
+to see the rate of gun violence regardless of the high population. Also,
+we would like to look more into the political reasons such as the
+congressional reasons that voted against gun violence laws and the
+effect of that in their congregational districts.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Data Visualization Project  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Beka Beriashvili.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>
